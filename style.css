@@ -1,0 +1,702 @@
+* {
+    font-family: rubik, helvetica, arial, sans-serif;
+}
+
+/*popup*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(45, 45, 45);
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 60%;
+    min-width: 400px;
+}
+
+.modal.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+    /* Animace pro plynulé otevreni */
+    opacity: 1;
+}
+
+.modal-content {
+    padding: 5px;
+    color: aliceblue;
+    vertical-align: middle;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.overlay.active {
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+img.discordPopup {
+    float: left;
+    display: block;
+    width: 10vw;
+    margin: 2vw;
+}
+
+/*end of popup*/
+/*Popup2*/
+.playersOnline {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.playersOnline .playersOnlinePopup {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    padding: 12px;
+    width: fit-content;
+    transform: translateX(-50%);
+    margin-top: 4vw;
+}
+
+.playersOnline .playersOnlinePopup::after {
+    content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color:  transparent  transparent #555 transparent;
+  
+}
+
+.playersOnline .active {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+p {
+    font-size: 1.6vw;
+    /*1.3vw*/
+    line-height: 1.9vw;
+    /*1.6vw*/
+}
+
+p.longText {
+    text-align: justify;
+}
+
+p a {
+    text-decoration: none;
+    font-family: minecraftItalic;
+    color: rgb(230, 60, 60);
+    border-radius: 10px;
+    padding: 5px;
+    transition: background-color 0.2s ease;
+}
+
+p a:hover {
+    background-color: rgba(70, 70, 70, 0.8);
+}
+
+hr {
+    border-color: rgb(120, 120, 120);
+    border-width: 1px;
+    border-style: solid;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr minmax(400px, 63%) 1fr;
+    grid-gap: 10px;
+    grid-template-rows: minmax(0.2fr, 100px) auto minmax(0.1fr, 60px);
+
+    font-family: rubik, helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-color: rgb(27, 27, 27);
+}
+
+/*heading*/
+header {
+    /* Grid placement */
+    display: block;
+    grid-column: 1 / span 3;
+    grid-row: 1;
+
+    background-size: cover;
+    height: 30vw;
+}
+
+h1 {
+    font-family: MinecraftRegular;
+    color: rgb(255, 47, 47);
+    text-align: center;
+    display: block;
+    padding-top: 6vw;
+    line-height: 4vw;
+    font-size: 4vw;
+}
+
+h1.heading {
+    padding-top: 8vw;
+    line-height: 5vw;
+    font-size: 5vw;
+}
+
+header p {
+    text-align: center;
+    display: block;
+    line-height: 4vw;
+    font-size: 1.6vw;
+    color: rgb(150, 150, 150);
+}
+
+/*button*/
+div.button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.button button {
+    padding: 0.8vw 2vw;
+    font-family: rubik, helvetica, arial, sans-serif;
+    border: none;
+    font-size: 1vw;
+    background-color: rgb(255, 47, 47);
+    transition: transform 0.2s ease;
+    color: antiquewhite;
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+div.button button i {
+    color: antiquewhite;
+    font-size: 0.9vw;
+}
+
+div.button button:hover {
+    transform: scale(1.05);
+}
+
+div.button button:active {
+    transform: scale(0.95);
+}
+
+/*main nav*/
+nav.mainNav {
+    height: fit-content;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease;
+    border-bottom: rgba(255, 255, 255, 0.616) 0 solid;
+    padding: 0.8vw;
+}
+
+nav.mainNav a {
+    font-size: 1.5vw;
+    display: inline-block;
+    padding: 10px;
+    margin: 0px;
+    line-height: 1.2vw;
+    color: aliceblue;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 0 2vw;
+}
+
+nav.mainNav a.text {
+    background-color: rgba(0, 0, 0, 0);
+    /* Průhledné pozadí */
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease;
+    /* Přechod */
+    border-radius: 0.6vw;
+}
+
+nav.mainNav a.text:hover {
+    background-color: rgba(10, 10, 10, 1);
+    border-color: rgb(160, 160, 160);
+}
+
+nav.mainNav a.img img {
+    height: 3.4vw;
+    border: 1px solid black;
+    color: antiquewhite;
+    border-radius: 0.6vw;
+}
+
+nav.mainNav a.img {
+    transition: transform 0.3s ease;
+    padding: 0px;
+    line-height: 0;
+}
+
+nav.mainNav a.img:hover {
+    transform: scale(1.2);
+}
+
+nav.mainNav.visible {
+    background-color: rgb(20, 20, 20);
+    border-bottom: rgb(140, 140, 140) 2px solid;
+}
+
+/*aside*/
+aside {
+    /* Grid placement */
+    display: block;
+    grid-column: 3;
+    grid-row: 3/ span 4;
+    height: fit-content;
+    background-color: rgb(20, 20, 20);
+    border: rgb(140, 140, 140) solid 2px;
+
+    /* Other */
+    margin: 0% 10% 0% 0%;
+    color: aliceblue;
+    padding: 0.7vw;
+    border-radius: 0.5vw;
+    position: sticky;
+    top: 6vw;
+}
+
+aside li a {
+    font-size: 1.2vw;
+    text-decoration: none;
+    color: aliceblue;
+    line-height: 2.6vw;
+    padding: 3px;
+    background-color: rgba(68, 68, 68, 0);
+    border-radius: 30px;
+    transition: background-color 0.2s ease;
+    /* Přechod */
+}
+
+aside li a:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+/*main*/
+main {
+    /* Grid placement */
+    display: block;
+    grid-column: 2;
+    grid-row: 3;
+    color: antiquewhite;
+    background-color: rgb(27, 27, 27);
+
+    /* Other */
+    margin: 0% 3%;
+
+}
+
+/*index.html ----------------------------------------------------------------------------------------------------------*/
+article.introduction {
+    /**background-color: rgb(45, 45, 45);**/
+    padding: 5px 10px;
+    margin: 5px 0;
+    
+}
+
+article.introduction h2 {
+    text-align: center;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 2.5vw;
+    line-height: 2vw;
+    font-family: MinecraftRegular;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+article.status {
+    background-color: rgb(45, 45, 45);
+    margin: 5px 0;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+article.status p {
+    color: rgb(150, 150, 150);
+    margin: 0;
+}
+
+table.status {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+
+article.discord {
+    text-align: center;
+}
+
+article.discord p {
+    color: rgb(150, 150, 150);
+    margin: 0;
+}
+
+article.discord img.discordImg {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    margin: 10%;
+}
+
+article.discord div.discordA p.h {
+    line-height: 2vw;
+    font-family: MinecraftRegular;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    padding-bottom: 10px;
+    font-size: 1.8vw;
+    margin: 10px 0;
+}
+
+article.discord div.discordA {
+    display: inline-block;
+    text-align: left;
+    padding: 4vw 1vw;
+    width: 26vw;
+}
+
+article.discord div.discordA p {
+    color: #cecece;
+    font-size: 1.4vw;
+    line-height: 1.2;
+    text-align: justify;
+}
+article.discord div.discordA div button {
+    margin-top: 2vw;
+}
+article.modpacks {
+    display: block;
+    background-color: rgb(45, 45, 45);
+    margin: 5px 0;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+
+article.modpacks a.downloadForge {
+    padding: 1vw;
+}
+
+article.modpacks h6 {
+    margin-top: 3vw;
+}
+
+article.modpacks .button {
+    margin: 2vw 0;
+}
+
+/*table align*/
+th,
+td {
+    text-align: center;
+}
+
+td.text {
+    font-size: 1vw;
+}
+
+/*how to connect.html ----------------------------------------------------------------------------------------------------------*/
+article.what_you_need,
+article.how_to_mods {
+    background-color: rgb(45, 45, 45);
+    margin: 5px 0;
+    padding: 3px 10px;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+/*rules.html ----------------------------------------------------------------------------------------------------------*/
+.rulePage {
+    display: none;
+}
+.rulePage.active {
+    display: block;
+}
+
+nav.ruleNav  {
+    display: block;
+    width: 100%;
+    margin: 2vw 0;
+    height: fit-content;
+}
+
+nav.ruleNav table {
+    margin: 0 auto;
+    border: #8b8b8b solid 2px;
+    border-radius: 30px;
+    padding: 0.5vw;
+}
+
+nav.ruleNav table tr th {
+    padding: 1vw;
+}
+
+a.ruleA {
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: #c9c9c9;
+    transition: background-color 0.2s ease;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1vw;
+    border-radius: 12px;
+}
+
+a.ruleA.active {
+    background-color: rgba(255, 47, 47, 1);
+}
+
+div.rule {
+    border: #8b8b8b solid 2px;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.2s ease;
+    width: 100%;
+    border-radius: 2vw;
+    height: fit-content;
+    margin: 0.6vw 0;
+}
+
+div.rule p {
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+    margin: 1.2vw 1.6vw;
+}
+
+div.rule:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+/*footer*/
+footer {
+    text-align: center;
+}
+
+footer {
+    /* Grid placement */
+    display: block;
+    grid-column: 2;
+    grid-row: 4;
+
+    /* Other */
+    margin: 0;
+}
+p.date {
+    color: #aaa;
+    font-size: 1vw;
+    line-height: 1.1vw;
+    margin: 5px;
+    padding-top: 1.2vw;
+}
+
+p.creator {
+    color: #5f5f5f;
+    font-size: 0.9vw;
+    line-height: 1vw;
+    margin: 5px;
+}
+
+p.email {
+    color: #aaa;
+    font-size: 0.9vw;
+    line-height: 1vw;
+    margin: 5px;
+}
+
+p.copyright {
+    color: #8b8b8b;
+    font-size: 0.7vw;
+    line-height: 0.8vw;
+    margin-top: 20px;
+}
+
+/*other*/
+.icon {
+    font-family: icons;
+    font-style: normal;
+    display: inline-block;
+    font-size: 2.6vw;
+    color: rgb(255, 47, 47);
+}
+
+.number {
+    font-size: 2vw;
+}
+
+
+/* Backgrounds */
+header.main {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(27, 27, 27, 1) 100%), url(foto/backgrounds/background3.jpg);
+}
+
+header.how_to_connect {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(27, 27, 27, 1) 100%), url(foto/backgrounds/background2.jpg);
+}
+
+header.rules {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(27, 27, 27, 1) 100%), url(foto/backgrounds/background4.jpg);
+}
+
+/* Fonts */
+@font-face {
+    font-family: MinecraftRegular;
+    src: url(fonts/MinecraftRegular.otf);
+}
+
+@font-face {
+    font-family: MinecraftTen;
+    src: url(fonts/MinecraftTen.ttf);
+}
+
+@font-face {
+    font-family: MinecraftBold;
+    src: url(fonts/MinecraftBold.otf);
+}
+
+@font-face {
+    font-family: MinecraftItalic;
+    src: url(fonts/MinecraftItalic.otf);
+}
+
+@font-face {
+    font-family: MinecraftBoldItalic;
+    src: url(fonts/MinecraftBoldItalic.otf);
+}
+
+@font-face {
+    font-family: icons;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/icons.woff2) format('woff2');
+}
+
+/*scrool bar*/
+/* Pro Webkit prohlížeče (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px; /* Šířka posuvníku */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #505050; /* Barva pozadí dráhy posuvníku */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Barva posuvníku */
+    border-radius: 10px; /* Zaoblení rohů posuvníku */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999; /* Barva posuvníku při najetí myší */
+  }
+  
+  /* Pro Firefox */
+  body {
+    scrollbar-width: thin; /* Šířka posuvníku */
+    scrollbar-color: #888 #505050; /* Barva posuvníku a dráhy posuvníku */
+  }
+  
+  /* Pro Internet Explorer a Edge */
+  body {
+    -ms-overflow-style: none; /* Skryje posuvník v IE a Edge */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none; /* Skryje posuvník v Webkit prohlížečích */
+  }

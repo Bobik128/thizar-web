@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thizar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="foto/thizar-logo.png" type="image/x-icon">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="discordPopup" src="foto/discord.png" alt="Discord">
+            <p>Pokud se budete chtít připojit na náš server, tak se nejdříve podívejte na to <a
+                    href="how_to_connect.html">jak se k nám dostat</a>.</p>
+            <p>Pokud jste připraveni se připojit, tak se přidejte k našemu <a target="_blank"
+                    href="https://discord.gg/Vb3pZUxG">Discord serveru</a> a tam najdete IP adresu.</p>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+    <!-- Header -->
+    <header class="rules" id="header">
+        <h1 class="heading">Pravidla</h1>
+        <p>Co dělat a nedělat na našem serveru a Discordu.</p>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav" class="mainNav">
+        <a class="img" href="index.html"><img src="foto/thizar-logo.png" alt="image"></a>
+        <a class="text" href="how_to_connect.html">Jak se připojit?</a>
+        <a class="text" href="rules.html">Pravidla</a>
+        <a class="text" href="adding_mods.html">Jak přidat módy</a>
+    </nav>
+
+    <!-- Aside -->
+    <aside>
+        <li><a href="#header">Začátek stránky</a></li>
+    </aside>
+
+    <main>
+
+        <nav class="ruleNav">
+            <table>
+                <tr>
+                    <th>
+                        <a class="ruleA" id="generalRules" href="#" onclick="showContent('#generalRules')">Obecná pravidla</a>
+                    </th>
+                    <th>
+                        <a class="ruleA" id="ingamelRules" href="#" onclick="showContent('#ingamelRules')">Pravidla ve hře</a>
+                    </th>
+                    <th>
+                        <a class="ruleA" id="modifyRules" href="#" onclick="showContent('#modifyRules')">Modifikace</a>
+                    </th>
+                </tr>
+            </table>
+        </nav>
+
+
+        <article id="ingamelRules" class="rulePage">
+            <div class="rule">
+                <p>
+                    1. Je zakázáno stavět urážlivé stavby či mít urážlivý nick nebo skin.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    2. Je zakázáno vydávat se za člena Admin teamu.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    3. Je zakázáno úmyslně a bezdůvodně ničit svět jako takový.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    4. Je zakázáno jakékoliv úmyslné škození jinému hráči a kažení hry ostatním. Tímto pravidlem je myšleno zejména, avšak nikoliv výlučně griefování a zabíjení.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    5. Je zakázáno psát či být vulgární celkově a kdekoliv.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    6. Je zakázáno stavět a používat takzvané zero-tick či rychlejší farmy, popřípadě jakékoliv redstone obvody nebo farmy využívající Create, které by mohly způsobovat přílišnou zátěž serveru. Redstone obvody nebo farmy využívající Create, u kterých máte podezření, že by mohly přílišně zatěžovat server, komunikujte s Admin Teamem a vyžádejte si jejich povolení. Stejně tak vám člen Admin teamu může smazat/zakázat či nařídit úpravu takových farem/staveb, které jsou pro server kritické či ohrožující.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    7. Elytra „launchers“ nejsou povoleny, z důvodu příliš rychlého načítání velkého počtu chunků, což může vést k lagům serveru.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    8. Je zakázáno zvýhodňovaní nových hráčů (Rozdávat majetek: předměty zdarma atd.).
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    9. Je zakázáno dálkově bombardovat, odstřelovat nebo decimovat stavby jiného hráče pomocí balistických kanónů nebo autonomního robota, pokud o tom hráč nebude vědět nebo nebude na serveru (Pokud ale jeho stavbu potřebujete nutně vymazat z povrchu zemského, tak mu o tom alespoň řekněte).
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    10. Je zakázáno stavět v blízkosti hráčova domu lagující stavby za účelem znevýhodnění daného hráče kvůli lagu v jeho domě.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    11. Je zakázáno chodit dál než 4000 bloků od spawnu. Terén tu není načtený a jeho generování výrazně snižuje tps serveru.
+                </p>
+            </div>
+
+        </article>
+        <article id="generalRules" class="rulePage">
+            <div class="rule">
+                <p>
+                    1. Hráč je povinen dodržovat platné zákony České republiky.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    2. Jakýkoliv hráč, co se registruje na našem serveru, souhlasí se všemi uvedenými pravidly a GDPR (Ochrana osobních údajů).
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    3. Admin team je hlavním rozhodujícím orgánem, co se týče událostí na serveru Thizar. Jedině Admin team může udělit výjimku z následujících pravidel. Každý hráč je povinen respektovat Admin Team a chovat se slušně.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    4. Je zakázáno lhaní Admin teamu – za lhaní se bere také šíření neplatných nebo lživých informací o serveru nebo členech Admin teamu.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    5. Je přísně zakázáno, jakkoliv obcházet udělené tresty, jako jsou třeba ban. V případě zjištění bude hráči udělen vyšší trest bez možnosti zrušení (permanentní ban).
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    6. Všechny soukromé zprávy jsou zaznamenány do protokolu serveru a lze je načíst podle potřeby kdykoliv zpětně.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    7. Je zakázáno navádět jiného hráče k porušování pravidel.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    8. Za porušení pravidel má Admin Team právo udávat tresty dle svého uvážení. Pokud hráč bude pravidla porušovat, bude potrestán. Pakliže jej bude neustále porušovat, může mu být uveden trest ve formě banu na dobu určitou dle uvážení Admin Teamu
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    9. Jestliže hráč podává stížnost na člena Admin Teamu, je povinen předložit důkazy bez úpravy – fotografie, výpisy či data.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    10. Majitel serveru, jakožto vlastník, si nárokuje právo smazat KOHOKOLIV A KDYKOLIV ze serveru bez udání důvodu v případě, že daný hráč nerespektuje nastavení serveru nebo rozhodnutí člena Admin Teamu.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    11. Je zakázáno jakkoliv obcházet tresty. (VPN, nový účet), takže je zakázán i Multiaccount = každý hráč má na serveru pouze jediný aktivní herní účet.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    12. Je přísně zakázáno používat jakékoliv prostředky, které skrývají nebo mění reálné informace o připojovaném hráči a připojování se prostřednictvím těchto prostředků na naše servery. Zneužívání dynamické (proměnlivé) IP adresy za účelem porušování zde uváděných pravidel, bude mít za následek odeslání logů (záznamů) poskytovateli internetového připojení, kde je IP adresa registrována a bude požadováno okamžité ukončení této činnosti.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    13. Je zakázáno vést různé DDoS/DoS/bot útoky proti serveru a snaha, o zhroucení systému serveru nebo zneužití bugu, bude přísně potrestána! Je dále přísně zakázáno využívat jakýchkoliv bugů serveru – pokud se vyskytne jakákoliv závada k získání xp, op věcí apod. hráči jsou povinni okamžitě problém nahlásit. V případě, že hráč toto pravidlo bude neustále zneužívat, Admin team mu může kdykoliv bez udání důvodu vymazat údaje ze serveru.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    14. Je přísně zakázáno sdílet jakékoliv osobní údaje a informace o hráčích nebo členech Admin Teamu – zejména IP, jméno a příjmení, bydliště, datum narození apod.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    15. Je zakázáno hledat chyby/mezery či jakkoliv slovíčkařit s pravidly. Využívání těchto nedokonalostí se může trestat banem.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    16. Veškeré návrhy, nápady, stížnosti či chyby je oprávněn řešit Admin Team. Hráč může v takovém případě ke komunikaci s Admin Teamem použít následující: soukromné zprávy na MC, Discord server Thizaru, či email.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    17. Majitel serveru a případně jím pověřené osoby přicházejí do styku s hráčovými osobními údaji. Tyto údaje dále zpracovávají. Zpracovávanými údaji jsou zejména hráčova přezdívka, IP adresa a počet a čas přístupů na server. Majitel serveru a případně jím pověřené osoby zpracovávají hráčovy osobní údaje v souladu s Evropským nařízením o ochraně osobních údajů (GDPR) a aplikovatelnými zákony ČR. Více informací o zpracování osobních údajů se může hráč dozvědět na vyžádání od Admin teamu za pomoci komunikačních prostředků uvedených v předchozím bodě.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    18. Logo, název a další identifikační prvky tohoto serveru, jsou důležitou součástí naší herní komunity. Je zakázáno používat, kopírovat nebo distribuovat logo, název serveru nebo jiné identifikační prvky, bez předchozího písemného souhlasu.
+                </p>
+            </div>
+        </article>
+        <article id="modifyRules" class="rulePage">
+            <div class="rule">
+                <p>
+                    1. Cheaty, upravené clienty a veškeré modifikace Minecraftu, které zvýhodňují hráče výrazně oproti ostatním, jsou bezpodmínečně zakázány. Například ty, které upravují Váš pohyb, nebo Vás informují o poloze hráčů/blocků, softwarové navyšování CPS a speedu, xray, reach, fly hack, schematica. Dále jsou zakázané i módy či resource packy, které tyto výhody poskytují. Tím se myslí například: fullbright, xray nebo i ten, díky kterému lze vidět v lávě bez jakéhokoliv efektu a díky tomu lze zcela čistě vidět jakákoliv ore či debris (Pokud se vám ale nechce těžit nebo stavět, nebo cestovat dlouho daleko, tak alespoň využijte věci, které už na našem serveru jsou, např.: geoscaner pro hledání oréček, computercraft turtle pro těžení nebo create vlaky pro přepravu).
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    2. Používání Auto clickeru, double-clicků, zatížené myši a jiných klikacích metod je zakázáno.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    3. Používání módů nebo programů k obcházení našich pravidel může vést k permanentnímu zabanování.
+                </p>
+            </div>
+            <div class="rule">
+                <p>
+                    3. Před použitím jakéhokoli programu třetí strany (módu), u kterého si nejste jisti a mohl by ovlivnovat hru, se nejdříve zeptejte. V případě, že dostanete ban, nebude přihlíženo k tomu, že jste nevěděli, jak tento mód funguje či jestli je zakázán.
+                </p>
+            </div>
+        </article>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p class="date">© 17.3.2024 / 2025 Thizar.cz</p>
+        <p class="email">thizar.mc@gmail.com</p>
+        <p class="creator">Vytvořil Tomáš Bocan</p>
+        <p class="copyright">We are in no way affiliated with or endorsed by Mojang, AB.</p>
+    </footer>
+</body>
+
+</html>

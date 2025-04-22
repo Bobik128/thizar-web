@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thizar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="foto/thizar-logo.png" type="image/x-icon">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="discordPopup" src="foto/discord.png" alt="Discord">
+            <p>Pokud se budete chtít připojit na náš server, tak se nejdříve podívejte na to <a
+                    href="how_to_connect.html">jak se k nám dostat</a>.</p>
+            <p>Pokud jste připraveni se připojit, tak se přidejte k našemu <a target="_blank"
+                    href="https://discord.gg/FvHPnSXkS3">Discord serveru</a> a tam najdete IP adresu.</p>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+    <!-- Header -->
+    <header class="main" id="header">
+        <h1 class="heading">Thizar cz</h1>
+        <p>Módovaný Minecraft server, kde představivost je vaše jediná zábrana.</p>
+        <div class="button">
+            <button onclick="openModal()">
+                <i class="icon">copy_all</i>
+                KLIKNI PRO PŘIPOJENÍ
+            </button>
+        </div>
+
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav" class="mainNav">
+        <a class="img" href="index.html"><img src="foto/thizar-logo.png" alt="image"></a>
+        <a class="text" href="how_to_connect.html">Jak se připojit?</a>
+        <a class="text" href="rules.html">Pravidla</a>
+        <a class="text" href="adding_mods.html">Jak přidat módy</a>
+    </nav>
+
+    <!-- Aside -->
+    <aside>
+        <li><a href="#header">Začátek stránky</a></li>
+        <li><a href="#introduction">Co jsme?</a></li>
+        <li><a href="#status">Status serveru</a></li>
+        <li><a href="#discord">Discord</a></li>
+        <li><a href="#modpacks">Modpacky</a></li>
+    </aside>
+
+    <!-- Main -->
+    <main>
+        <!-- Introduction -->
+        <article id="introduction" class="introduction">
+            <h2>Co jsme?</h2>
+            <p>
+                Jsme malý módovaný Minecraft server, který se zaměřuje na survival.
+            </p>
+        </article>
+
+        <!-- Status -->
+        <article class="status" id="status">
+            <h3>Status</h3>
+            <p>Jak je na tom náš server</p>
+            <table class="status">
+                <tr>
+                    <th class="statusIcon" onmouseenter="playerPopupOpen()" onmouseleave="playerPopupClose()">
+                        <i class="icon">sports_esports</i>
+                    </th>
+                    <th class="statusIcon">
+                        <i class="icon">wifi</i>
+                    </th>
+                    <th class="statusIcon">
+                        <i class="icon">gamepad</i>
+                    </th>
+                </tr>
+                <tr class="number">
+                    <td onmouseenter="playerPopupOpen()" onmouseleave="playerPopupClose()">
+                        <div class="playersOnline">
+                            <span class="playersOnlinePopup" id="playersOnlinePopup"></span>
+                        </div>
+                        <span class="server-online">-</span> / <span class="server-max">-</span>
+
+                    </td>
+                    <td>
+                        <span class="server-running">N/A</span>
+                    </td>
+                    <td>
+                        <span class="server-version">-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text" onmouseenter="playerPopupOpen()" onmouseleave="playerPopupClose()">Online hráčů
+                    </td>
+                    <td class="text">Status serveru</td>
+                    <td class="text">Verze serveru</td>
+                </tr>
+            </table>
+            <script src="minecraft.js"></script>
+        </article>
+
+        <article class="discord" id="discord">
+            <h4>Discord</h4>
+            <p>Naše hlavní komunikační platforma</p>
+            <img src="foto/discord.png" alt="discord" class="discordImg">
+            <div class="discordA">
+                <p class="h">Objev komunitu Thizaru!</p>
+                <p>
+                    Myslíme si, že komunikace je základem úspěchu, proto jsme založili Discord server! Ten nám
+                    umožňuje být v kontaktu s našimi hráči. Připojte se na náš Discord server a objevte naší
+                    komunitu!
+                </p>
+                <div class="button">
+                    <button id="discordBtn">
+                        Dřidat se k naší Discord komunitě
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="modpacks" id="modpacks">
+            <h6>Modpacky</h6>
+            <p>
+                Zde jsou jednotlivé modpacky:
+            </p>
+            <div class="button">
+                <button id="downloadForge">
+                    Stáhnout modpack pro CurseForge (origo)
+                </button>
+            </div>
+            <div class="button">
+                <button id="downloadTL">
+                    Stáhnout modpack pro T-launcher (varez)
+                </button>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p class="date">© 17.3.2024 / 2025 Thizar.cz</p>
+        <p class="email">thizar.mc@gmail.com</p>
+        <p class="creator">Vytvořil Tomáš Bocan</p>
+        <p class="copyright">We are in no way affiliated with or endorsed by Mojang, AB.</p>
+    </footer>
+</body>
+
+</html>
