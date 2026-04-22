@@ -565,6 +565,12 @@ div.rule:hover {
 }
 
 /*seasons*/
+.seasonPage {
+    display: none;
+}
+.seasonPage.active {
+    display: block;
+}
 nav.seasonNav  {
     display: block;
     width: 100%;
