@@ -564,6 +564,39 @@ div.rule:hover {
     background-color: rgb(48, 48, 48);
 }
 
+/*seasons*/
+nav.seasonNav  {
+    display: block;
+    width: 100%;
+    margin: 2vw 0;
+    height: fit-content;
+}
+
+nav.seasonNav table {
+    margin: 0 auto;
+    border: #8b8b8b solid 2px;
+    border-radius: 30px;
+    padding: 0.5vw;
+}
+
+nav.seasonNav table tr th {
+    padding: 1vw;
+}
+
+a.seasonA {
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: #c9c9c9;
+    transition: background-color 0.2s ease;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1vw;
+    border-radius: 12px;
+}
+
+a.seasonA.active {
+    background-color: rgba(255, 47, 47, 1);
+}
+
 /*footer*/
 footer {
     text-align: center;
