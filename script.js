@@ -90,3 +90,26 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.removeChild(link);
     });
 });
+
+// seasons code
+function showContentSeason(sectionId) {
+    // Skrýt všechny sekce
+    var contentsA = document.querySelectorAll('.seasonPage');
+    contentsA.forEach(function (content) {
+        content.classList.remove('active');
+    });
+    var contents = document.querySelectorAll('.seasonA');
+    contents.forEach(function (content) {
+        content.classList.remove('active');
+    });
+
+    // Zobrazit vybranou sekci
+    var sections = document.querySelectorAll(sectionId);
+    sections.forEach(function (section) {
+        section.classList.add('active');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    showContentSeason('#season1');
+});
